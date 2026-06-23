@@ -13,7 +13,6 @@ export class VentasComponent { // Tu clase se llama Ventas a secas
   pagar(): void {
     const ticket = { usuario_id: 1, ruta_id: 1, asiento: '05', total: 180.00 };
     
-    // Forzamos el tipo (res: any) y (e: any) para callar el error TS2571
     this.service.registrarVenta(ticket).subscribe({
       next: (res: any) => { 
         alert('¡Compra guardada con éxito en PostgreSQL!'); 
