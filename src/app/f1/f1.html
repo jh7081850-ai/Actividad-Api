@@ -1,0 +1,31 @@
+<div style="padding: 20px; font-family: sans-serif;">
+  <h2 style="color: #e10600; margin-bottom: 5px;">Telemetría de Monoplazas (OpenF1)</h2>
+  <p style="margin-top: 0; color: #666;">Filtro activo: Velocidades superiores a 315 km/h</p>
+
+  <div *ngIf="cargando" style="font-weight: bold; color: #888; padding: 15px 0;">
+    Recuperando paquetes de telemetría del monoplaza desde la API externa...
+  </div>
+
+  <table *ngIf="!cargando" border="1" style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
+    <thead style="background-color: #1a1a1a; color: white;">
+      <tr>
+        <th style="padding: 12px;">Piloto</th>
+        <th style="padding: 12px;">RPM</th>
+        <th style="padding: 12px;">Velocidad</th>
+        <th style="padding: 12px;">Acelerador</th>
+        <th style="padding: 12px;">Freno</th>
+        <th style="padding: 12px;">Marcha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of telemetria" style="border-bottom: 1px solid #eee;">
+        <td style="padding: 10px; font-weight: bold;">#{{ dato.driver_number }}</td>
+        <td style="padding: 10px;">{{ dato.rpm | number }} RPM</td>
+        <td style="padding: 10px; color: #e10600; font-weight: bold;">{{ dato.speed }} km/h</td>
+        <td style="padding: 10px;">{{ dato.throttle }}%</td>
+        <td style="padding: 10px;">{{ dato.brake }}%</td>
+        <td style="padding: 10px; font-weight: bold;">G{{ dato.n_gear }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

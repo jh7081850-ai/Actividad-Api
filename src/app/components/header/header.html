@@ -1,0 +1,11 @@
+<header class="main-header">
+  <div class="logo-container"><span>🚌 TransMove</span></div>
+  <nav class="navigation-menu">
+    <button (click)="cambiarVista('home')" [class.active]="vistaActual === 'home'" class="nav-link">Home</button>
+    <button (click)="cambiarVista('rutas')" [class.active]="vistaActual === 'rutas'" class="nav-link">Rutas</button>
+    <button (click)="cambiarVista('f1')" [class.active]="vistaActual === 'f1'" class="nav-link">Telimetria F1</button>
+  </nav>
+  <div class="header-actions">
+    <button (click)="cambiarVista('registro')" class="btn-cta">Ingresar</button>
+  </div>
+</header>

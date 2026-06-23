@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background-color: #f3f4f6; color: #1f2937; min-height: 100vh; }
+app-root { display: flex; flex-direction: column; min-height: 100vh; }
+.animate-fade { animation: fadeIn 0.3s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Layout Estructuras */
+.main-header { display: flex; justify-content: space-between; align-items: center; background-color: #1e3a8a; padding: 16px 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+.logo-container { color: #ffffff; font-size: 1.4rem; font-weight: 700; }
+.navigation-menu { display: flex; gap: 12px; }
+.nav-link { background: none; border: none; outline: none; color: #cbd5e1; font-size: 1rem; font-weight: 500; cursor: pointer; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; }
+.nav-link:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.08); }
+.nav-link.active { color: #ffffff; background-color: rgba(255, 255, 255, 0.15); border-bottom: 3px solid #f59e0b; border-radius: 6px 6px 2px 2px; }
+.btn-cta { background-color: #f59e0b; color: #111827; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background-color 0.2s; }
+.btn-cta:hover { background-color: #d97706; }
+
+.main-container { flex: 1; padding: 40px 20px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.subtitle { color: #4b5563; margin: 4px 0 24px 0; }
+
+/* Home */
+.hero-search { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: #ffffff; padding: 40px 30px; border-radius: 12px; text-align: center; margin-bottom: 40px; }
+.search-bar-box { background-color: #ffffff; padding: 20px; border-radius: 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) auto; gap: 16px; align-items: flex-end; margin-top: 20px; }
+.input-group { display: flex; flex-direction: column; text-align: left; color: #4b5563; }
+.input-group label { font-size: 0.85rem; margin-bottom: 6px; font-weight: 600; }
+.input-group input { padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; outline: none; }
+.btn-search { background-color: #f59e0b; color: #111827; border: none; padding: 0 24px; font-weight: 700; border-radius: 6px; cursor: pointer; height: 38px; }
+.features-section { display: flex; gap: 20px; flex-wrap: wrap; }
+.card-feature { background: #ffffff; padding: 24px; border-radius: 8px; flex: 1; min-width: 250px; border-top: 4px solid #1e3a8a; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+/* Rutas */
+.routes-list { display: flex; flex-direction: column; gap: 16px; }
+.route-card { background: #ffffff; padding: 20px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e5e7eb; }
+.arrow { color: #2563eb; padding: 0 5px; }
+.route-price { display: flex; align-items: center; gap: 20px; color: #111827; }
+.price { font-size: 1.3rem; font-weight: 700; }
+.btn-select { background-color: #1e3a8a; color: #ffffff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+
+/* Ventas */
+.sales-container { display: flex; gap: 30px; flex-wrap: wrap; }
+.bus-layout { background: #ffffff; padding: 24px; border-radius: 8px; flex: 2; min-width: 300px; }
+.bus-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; max-width: 300px; margin: 20px 0; padding: 15px; background-color: #f9fafb; border-radius: 8px; border: 1px dashed #d1d5db; }
+.seat { padding: 10px 0; text-align: center; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.seat.available { background-color: #e5e7eb; color: #4b5563; }
+.seat.occupied { background-color: #fca5a5; color: #b91c1c; cursor: not-allowed; }
+.seat.selected { background-color: #f59e0b; color: #111827; }
+.seat-space { grid-column: 3; }
+.checkout-summary { background: #1e3a8a; color: #ffffff; padding: 24px; border-radius: 8px; flex: 1; min-width: 250px; display: flex; flex-direction: column; justify-content: space-between; }
+.btn-pay { background-color: #f59e0b; color: #111827; width: 100%; border: none; padding: 12px; font-weight: 700; border-radius: 6px; cursor: pointer; margin-top: 15px; }
+
+/* Registro */
+.auth-box { background: #ffffff; max-width: 400px; margin: 30px auto; padding: 30px; border-radius: 12px; border: 1px solid #e5e7eb; }
+.auth-form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+.form-field { display: flex; flex-direction: column; gap: 5px; }
+.form-field input { padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; outline: none; }
+.btn-auth { background: #1e3a8a; color: #ffffff; padding: 10px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+
+/* Footer */
+.main-footer { background-color: #111827; color: #9ca3af; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; margin-top: auto; }

@@ -1,0 +1,15 @@
+<section class="animate-fade">
+  <h2>Rutas Disponibles (Desde PostgreSQL)</h2>
+  <div class="routes-list" style="margin-top: 20px;">
+    <div class="route-card" *ngFor="let viaje of listaDeViajes">
+      <div>
+        <h3>{{ viaje.origen }} <span class="arrow">&rarr;</span> {{ viaje.destino }}</h3>
+        <p>Servicio: {{ viaje.tipo_servicio }} | Horario: {{ viaje.horario }}</p>
+      </div>
+      <div class="route-price">
+        <span class="price">${{ viaje.precio }} MXN</span>
+        <button class="btn-select" (click)="seleccionar()">Seleccionar</button>
+      </div>
+    </div>
+  </div>
+</section>
